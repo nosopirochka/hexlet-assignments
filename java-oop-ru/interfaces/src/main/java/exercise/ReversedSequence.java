@@ -22,6 +22,9 @@ public class ReversedSequence implements CharSequence {
     }
 
     public ReversedSequence subSequence(int start, int end) {
+        if (start < 0 || end > reversedSequence.length()) {
+            throw new IndexOutOfBoundsException();
+        }
         return new ReversedSequence(reversedSequence.substring(start, end));
     }
 
