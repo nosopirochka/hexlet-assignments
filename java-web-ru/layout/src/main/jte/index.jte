@@ -1,0 +1,1 @@
+@template.layout.page(content = @`<h1>This is a main page</h1>`)
