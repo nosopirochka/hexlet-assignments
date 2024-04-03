@@ -1,0 +1,13 @@
+---
+
+spring:
+  jpa:
+    show-sql: true
+  output:
+    ansi:
+      enabled: always
+#  hibernate:
+#    ddl-auto: updated
+#
+#server:
+#  port: 7070
