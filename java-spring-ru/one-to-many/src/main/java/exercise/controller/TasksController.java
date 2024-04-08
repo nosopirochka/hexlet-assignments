@@ -74,7 +74,7 @@ public class TasksController {
         taskMapper.update(updateDTO, task);
         var user = userRepository.findById(updateDTO.getAssigneeId()).get();
         task.setAssignee(user);
-        user.addTask(task);
+
         userRepository.save(user);
         return taskMapper.map(task);
     }
