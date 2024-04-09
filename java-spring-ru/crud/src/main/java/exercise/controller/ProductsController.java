@@ -52,10 +52,7 @@ public class ProductsController {
     public ProductDTO show(@PathVariable Long id) {
         var product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
-        var categoryName = categoryRepository.findById(product.getCategory().getId()).get().getName();
-        var productDTO = productMapper.map(product);
-        productDTO.setCategoryName(categoryName);
-        return productDTO;
+        return productMapper.map(product);
     }
 
     @PostMapping(path = "")
