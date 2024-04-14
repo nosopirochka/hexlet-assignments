@@ -46,6 +46,18 @@ class AppTest {
     }
 
     // BEGIN
-    
+    @Test
+    void testGetDirectorySize() throws Exception {
+        var size = App.getDirectorySize("src/test/resources/dir");
+
+        assertThat(size.get()).isEqualTo(21);
+    }
+
+    @Test
+    void testDirectorySizeWithEmptyFile() throws Exception {
+        var size = App.getDirectorySize("src/test/resources/empty_dir");
+
+        assertThat(size.get()).isEqualTo(0);
+    }
     // END
 }
